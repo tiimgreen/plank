@@ -68,16 +68,16 @@
     def self.default
       Plank::Handler::Thin
     end
-  end
 
-  class Thin
+    class Thin
 
-    def self.run(app, options = {})
-      host = options[:Host]
-      port = options[:Port]
-      args =  [host, port, app, options]
-      server = ::Thin::Server.new(*args)
-      server.start
+      def self.run(app, options = {})
+        host = options[:Host]
+        port = options[:Port]
+        args =  [host, port, app, options]
+        server = ::Thin::Server.new(*args)
+        server.start
+      end
     end
   end
 end
